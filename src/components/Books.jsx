@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import SingleBook from "./SingleBook";
 
 class Books extends Component {
-	addToCart1 = (title) => {
+	addToCart1 = (title, openState) => {
 		console.log("adding book", title);
-		this.props.getBook(title);
+		console.log("state", openState);
+		this.props.getBook(title, openState);
 	};
 
 	render() {

@@ -2,13 +2,19 @@ import React, { Component } from "react";
 import { Divider } from "antd";
 
 class Cart extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			open: false,
+		};
+	}
 	render() {
 		return (
 			<div
 				style={{
 					width: 300,
-					maxHeight: 400,
-					display: "flex",
+					height: 600,
+					display: `${this.state.open ? "none" : "flex"}`,
 					flexDirection: "column",
 					backgroundColor: "white",
 					position: "fixed",
@@ -23,7 +29,6 @@ class Cart extends Component {
 				<h2>Mon panier</h2>
 				{this.props.info.map((el) => (
 					<>
-						<Divider />
 						<p>{el}</p>
 						<Divider />
 					</>
