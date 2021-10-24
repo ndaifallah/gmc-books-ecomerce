@@ -7,15 +7,18 @@ class Books extends Component {
     addToCart1 = (title) => {
         // title est récupéré depuis le fils quand on click
         console.log('Adding book', title);
+        this.props.onAddToCart(title);
     }
 
     render(){
+        console.log(this.props)
         return (<div style={{ 
             display: 'flex',
             flexWrap: 'wrap',
+            width: "80%"
             
         }}>
-            {/* 2- On passe la fonction addToCart au singleBook pour récupérer l'information title a chaque fois on click sur le bouton add */}
+            {/* 2- On passe la fonction addToCart1 au singleBook pour récupérer l'information title a chaque fois on click sur le bouton add */}
             {this.props.books.map((el) => <SingleBook book={el} addBook={this.addToCart1}/>)}
         </div>)
     }

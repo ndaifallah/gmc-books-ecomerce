@@ -22,7 +22,7 @@ class SingleBook extends Component {
                 <Card.Meta
                 // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
                 title={this.props.book.title}
-                description={this.props.book.authors[0].name}
+                description={this.props.book.authors[0]?.name}
                 />
             </Card>)
     }
